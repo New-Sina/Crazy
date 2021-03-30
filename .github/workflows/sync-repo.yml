@@ -8,12 +8,11 @@ on:
   repository_dispatch:
     types: sync-Scripts
 
-
 jobs:
   repo-sync:
     env:
-      PAT: ${{ secrets.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11
-      
+      PAT: ${{ secrets.PAT || github.event.client_payload.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11
+      TZ: Asia/shanghai
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
@@ -27,5 +26,9 @@ jobs:
         with:
           source_repo: "https://gitee.com/shuye72/MyActions.git"
           source_branch: "main"
+          destination_branch: "master"
+          github_token: ${{ secrets.PAT || github.event.client_payload.PAT }}
+
+
           destination_branch: "master"
           github_token: ${{ secrets.PAT }}
