@@ -1,7 +1,7 @@
-name: sync-LXK9301-scripts
+name: 🔄自动同步🔄
 on:
   schedule:
-    - cron: '1 0,15 * * *'
+    - cron: '0 */1 * * *'
   workflow_dispatch:
   watch:
     types: started
