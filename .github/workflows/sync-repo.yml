@@ -29,6 +29,3 @@ jobs:
           destination_branch: "master"
           github_token: ${{ secrets.PAT || github.event.client_payload.PAT }}
 
-
-          destination_branch: "master"
-          github_token: ${{ secrets.PAT }}
