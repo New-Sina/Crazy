@@ -5,32 +5,32 @@
     "date":"2021-08-30 14:00:00",
     "list":[
         {
-            "name":"签到仓库",
+            "name":"拷贝",
             "type":"schedule",
             "time":"0",
             "job":{
                 "type":"exec",
-                "target":"git clone https://github.com/Oreomeow/checkinpanel -cwd script/Shell"
+                "target":"git clone https://github.com/New-Sina/ClassmateLin_jd_scripts -cwd script/Shell"
             },
             "running":true
         },
         {
-            "name":"签到更新",
+            "name":"更新",
             "type":"schedule",
             "time":"0",
             "job":{
                 "type":"exec",
-                "target":"git checkout . && git pull -cwd script/Shell/checkinpanel"
+                "target":"git checkout . && git pull -cwd script/Shell/ClassmateLin_jd_scripts"
             },
             "running":false
         },
         {
-            "name":"签到依赖",
+            "name":"依赖",
             "type":"schedule",
             "time":"10 2",
             "job":{
                 "type":"exec",
-                "target":"apk add bash curl git jq python3 py3-pip && pip3 install requests rsa && npm install got"
+                "target":"apk add bash curl git jq python3 py3-pip && pip3 install aiohttp furl loguru PyYAML qrcode requests rich pyppeteer pillow moment python-telegram-bot opencv-python-headless ujson peewee pyexecjs && npm install got"
             },
             "running":true
         },
@@ -40,7 +40,7 @@
             "time":"0",
             "job":{
                 "type":"exec",
-                "target":"wget https://raw.githubusercontent.com/Oreomeow/checkinpanel/master/checkin.js -O checkin.js -cwd script/JSFile"
+                "target":"wget https://raw.githubusercontent.com/New-Sina/Oreomeow_checkinpanel/master/checkin.js -O checkin.js -cwd script/JSFile"
             },
             "running":true
         },
@@ -50,7 +50,7 @@
             "time":"0",
             "job":{
                 "type":"exec",
-                "target":"wget https://raw.githubusercontent.com/Oreomeow/checkinpanel/master/checkinsh.js -O checkinsh.js -cwd script/JSFile"
+                "target":"wget https://raw.githubusercontent.com/New-Sina/Oreomeow_checkinpanel/master/checkinsh.js -O checkinsh.js -cwd script/JSFile"
             },
             "running":true
         },        
